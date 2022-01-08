@@ -4,23 +4,16 @@ import {BookCreateComponent} from './book/book-create/book-create.component';
 import {BookListComponent} from './book/book-list/book-list.component';
 import {BookEditComponent} from './book/book-edit/book-edit.component';
 import {BookDeleteComponent} from './book/book-delete/book-delete.component';
+// @ts-ignore
+import * as module from 'module';
 
+// @ts-ignore
+// @ts-ignore
 const routes: Routes = [
   {
-    path: 'books/create',
-    component: BookCreateComponent
-  },
-  {
     path: 'books',
-    component: BookListComponent
-  },
-  {
-    path: 'books/edit/:id',
-    component: BookEditComponent
-  },
-  {
-    path: 'books/delete/: id',
-    component: BookDeleteComponent
+    // tslint:disable-next-line:no-shadowed-variable
+    loadChildren: () => import('./book/book.module').then(module => module.BookModule)
   }
 ];
 
