@@ -15,8 +15,8 @@
     <td>{{book.title}}</td>
     <td>{{book.author}}</td>
     <td>{{book.description}}</td>
-    <td><a routerLink="/books/edit/{{i}}">Edit</a></td>
-    <td><a routerLink="/books/delete/{{i}}">Delete</a></td>
+    <td><a routerLink="/books/edit/{{book.id}}">Edit</a></td>
+    <td><a routerLink="/books/delete/{{book.id}}">Delete</a></td>
   </tr>
 </table>
 <!--<app-book-create (eventEmitter)="addNewBook($event)"> </app-book-create>-->

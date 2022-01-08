@@ -18,7 +18,9 @@ export class BookDeleteComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       // @ts-ignore
       this.id = +paramMap.get('id');
-      // this.book = this.bookService.getById(this.id);
+      this.bookService.getById(this.id).subscribe(book => {
+        this.book = book;
+      });
 
     });
   }
@@ -28,8 +30,10 @@ export class BookDeleteComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   delete(){
-    this.bookService.delete(this.id);
-    this.router.navigateByUrl('/books');
+    this.bookService.delete(this.id).subscribe(() => {
+      this.router.navigateByUrl('/books');
+    });
+
   }
 
 }
