@@ -1,0 +1,26 @@
+<h1>Book create form</h1>
+<form #createBookForm="ngForm" (ngSubmit)="submit(createBookForm)">
+  <table >
+    <tr>
+      <td>Id: </td>
+      <td><input type="text" ngModel name="id">
+    </tr>
+    <tr>
+      <td>Title: </td>
+      <td><input type="text" ngModel name="title">
+    </tr>
+    <tr>
+      <td>Author: </td>
+      <td><input type="text" ngModel name="author">
+    </tr>
+    <tr>
+      <td>Description: </td>
+      <td><input type="text" ngModel name="description">
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Submit</button></td>
+    </tr>
+  </table>
+</form>
+

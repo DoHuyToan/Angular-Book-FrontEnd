@@ -1,0 +1,23 @@
+<h1>Book List</h1>
+<table border="1">
+  <tr>
+    <th>Stt</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let book of bookList; index  as i">
+    <td>{{i+1}}</td>
+    <td>{{book.id}}</td>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.description}}</td>
+    <td><a routerLink="/books/edit/{{i}}">Edit</a></td>
+    <td><a routerLink="/books/delete/{{i}}">Delete</a></td>
+  </tr>
+</table>
+<!--<app-book-create (eventEmitter)="addNewBook($event)"> </app-book-create>-->
+<!--<app-book-edit (eventEmitter)="editBook($event)" *ngIf="isShowEditForm" [book]="bookList[index]"> </app-book-edit>-->
