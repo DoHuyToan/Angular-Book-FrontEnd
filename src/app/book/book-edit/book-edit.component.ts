@@ -26,7 +26,7 @@ export class BookEditComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(paramMap => {
       // @ts-ignore
       this.id = +paramMap.get('id');
-      this.book = this.bookService.getById(this.id);
+      // this.book = this.bookService.getById(this.id);
       this.editBookForm = new FormGroup({
         id: new FormControl(this.book.id),
         title: new FormControl(this.book.title),

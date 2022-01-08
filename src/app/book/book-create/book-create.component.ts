@@ -21,9 +21,11 @@ export class BookCreateComponent implements OnInit {
   // tslint:disable-next-line:typedef
   submit(bookForm: { value: Book | undefined; resetForm: () => void; }){
     // this.eventEmitter.emit(bookForm.value);
-    this.bookService.create(bookForm.value);
-    bookForm.resetForm();
-    this.router.navigate(['/books']);
+    this.bookService.create(bookForm.value).subscribe(() => {
+      bookForm.resetForm();
+      this.router.navigateByUrl('/books');
+    }, error => {
+      alert('Error');
+    });
   }
-
 }

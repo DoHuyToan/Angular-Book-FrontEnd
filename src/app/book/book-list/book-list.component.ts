@@ -16,7 +16,11 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bookList = this.bookService.getAll();
+    this.bookService.getAll().subscribe(data => {
+      this.bookList = data;
+    }, error => {
+      console.log(error);
+    });
   }
 
   // tslint:disable-next-line:typedef
